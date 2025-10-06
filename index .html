@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Day Pass - Portsmouth (Dense Paper Animation)</title>
+<style>
+:root{
+  --bg:#0c1c59;
+  --card-bg:#ffffff;
+  --ticket-red:#8a0124;
+  --ticket-blue:#071d75;
+  --muted:#eeeeee;
+  --countdown-color:#d450b3; 
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#031031 60%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--muted);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+.container{
+  width:960px;
+  max-width:100%;
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:2rem;
+  align-items:start;
+}
+/* card */
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border-radius:18px;
+  padding:2rem;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  position:relative;
+  overflow:hidden;
+}
+/* left */
+.hero{
+  display:flex;
+  gap:1.5rem;
+  align-items:flex-start;
+}
+.poster{
+  width:200px;
+  height:260px;
+  border-radius:12px;
+  background:linear-gradient(180deg,#0f2a6b,#061138);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.03), 0 8px 24px rgba(2,6,23,0.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  font-weight:700;
+  font-size:0.9rem;
+  letter-spacing:0.6px;
+  text-transform:uppercase;
+}
+.info{
+  flex:1;
+}
+.title{
+  font-size:1.4rem;
+  margin:0 0 0.25rem 0;
+  color:#fff;
+}
+.meta{
+  font-size:0.9rem;
+  opacity:0.8;
+  margin-bottom:1rem;
+}
+.description{
+  font-size:0.95rem;
+  line-height:1.45;
+  color:rgba(255,255,255,0.88);
+  margin-bottom:1.2rem;
+}
+.badges{
+  display:flex;
+  gap:0.5rem;
+}
+.badge{
+  display:inline-flex;
+  gap:0.5rem;
+  align-items:center;
+  padding:0.4rem 0.6rem;
+  border-radius:999px;
+  background:rgba(255,255,255,0.03);
+  font-size:0.85rem;
+}
+/* right column (ticket) */
+.ticket{
+  background:linear-gradient(180deg,var(--card-bg), #f6f7fb);
+  color:#07122f;
+  border-radius:14px;
+  padding:1rem;
+  box-shadow: 0 12px 30px rgba(2,6,23,0.2);
+  position:relative;
+}
+.ticket .price{
+  font-size:1.6rem;
+  font-weight:700;
+  margin-bottom:0.25rem;
+}
+.ticket .small{
+  font-size:0.85rem;
+  color:#6b7280;
+}
+.divider{
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(0,0,0,0.06), transparent);
+  margin:0.8rem 0;
+}
+/* footer actions */
+.actions{
+  display:flex;
+  gap:0.5rem;
+  margin-top:0.8rem;
+}
+.btn{
+  border:0;
+  padding:0.7rem 1rem;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  background:linear-gradient(90deg,var(--ticket-blue),#2334a8);
+  color:#fff;
+  box-shadow: 0 6px 18px rgba(9,12,46,0.25);
+}
+.btn.secondary{
+  background:transparent;
+  color:#07112f;
+  border:1px solid rgba(7,17,47,0.06);
+  box-shadow:none;
+}
+/* small responsive */
+@media (max-width:880px){
+  .container{grid-template-columns:1fr; padding:0;}
+  .poster{width:140px;height:190px}
+}
+.footer-note{
+  font-size:0.8rem;
+  opacity:0.6;
+  margin-top:1rem;
+}
+</style>
+</head>
+<body>
+<main class="container" role="main" aria-labelledby="page-title">
+  <section class="card" aria-labelledby="show-title">
+    <div class="hero">
+      <div class="poster" aria-hidden="true">Portsmouth</div>
+      <div class="info">
+        <h1 id="show-title" class="title">Day Pass — Portsmouth</h1>
+        <div class="meta">Sat, 15 May — 10:00 – 18:00 · Southsea Common</div>
+        <p class="description">Join us for a day of dense paper animation, live music and riverside food stalls. This immersive family-friendly event features paper artists, workshops and interactive installations. Suitable for all ages.</p>
+        <div class="badges" role="list">
+          <span class="badge" role="listitem">Family Friendly</span>
+          <span class="badge" role="listitem">Outdoor</span>
+          <span class="badge" role="listitem">Free Entry</span>
+        </div>
+        <div class="footer-note">Organised by Portsmouth Arts · <a href="#" style="color:inherit;text-decoration:underline;">More info</a></div>
+      </div>
+    </div>
+    <div class="divider" style="margin-top:1.2rem"></div>
+    <div class="description" style="margin-top:1rem">This page is prepared for GitHub Pages. Save this file as <code>index.html</code> in your repository's root, enable GitHub Pages from the repository settings (select the main branch) and your page will be live at <em>https://&lt;your-username&gt;.github.io/&lt;repo-name&gt;/</em>.</div>
+  </section>
+
+  <aside class="ticket" aria-label="ticket purchase">
+    <div class="price">Free</div>
+    <div class="small">No ticket required</div>
+    <div class="divider"></div>
+    <div>
+      <strong>Location</strong>
+      <div class="small">Southsea Common, Portsmouth, PO4</div>
+    </div>
+    <div class="actions">
+      <button class="btn">Add to calendar</button>
+      <button class="btn secondary">Share</button>
+    </div>
+  </aside>
+</main>
+
+</body>
+</html>
